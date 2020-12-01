@@ -1,0 +1,52 @@
+{
+  "name": "v-server",
+  "version": "1.0.0",
+  "description": "a web server support live realod ,also support webpack",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "bili": "bili --format esm --format cjs",
+    "r:patch": "npm run bili && standard-version --release-as patch && git push --follow-tags origin master && npm publish",
+    "build": "microbundle build --entry src/index.ts --output dist/index.js",
+    "release": "npm run build && standard-version && git push --follow-tags origin master && npm publish",
+    "release:first": "npm run build && standard-version --first-release && git push --follow-tags origin master && npm publish",
+    "release:major": "npm run build && standard-version --release-as major && git push --follow-tags origin master && npm publish",
+    "release:minor": "npm run build && standard-version --release-as minor && git push --follow-tags origin master && npm publish",
+    "release:patch": "npm run build && standard-version --release-as patch && git push --follow-tags origin master && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huruji/v-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huruji/v-server/issues"
+  },
+  "homepage": "https://github.com/huruji/v-server#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "bili": "^4.8.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "microbundle": "^0.11.0",
+    "prettier": "^1.19.1",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "standard-version": "^7.1.0",
+    "typescript": "^3.8.3"
+  }
+}
