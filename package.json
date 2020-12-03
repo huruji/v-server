@@ -30,6 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/node": "^14.14.10",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
     "bili": "^4.8.1",
@@ -47,6 +48,11 @@
     "prettier": "^1.19.1",
     "rollup-plugin-typescript2": "^0.26.0",
     "standard-version": "^7.1.0",
+    "ts-node": "^9.0.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "commander": "^6.2.0",
+    "v8-compile-cache": "^2.2.0"
   }
 }
