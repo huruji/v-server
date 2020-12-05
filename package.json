@@ -52,7 +52,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@types/cheerio": "^0.22.22",
+    "cheerio": "^1.0.0-rc.3",
     "commander": "^6.2.0",
+    "mime": "^2.4.6",
     "v8-compile-cache": "^2.2.0"
   }
 }
