@@ -1,5 +1,6 @@
 import { createServer, Server } from 'http'
 import { staticFileHandler } from './static'
+import { reloadHanlder, signalHandler, signalReload, } from './static/reload'
 
 
 type ServerOptions = {
@@ -8,6 +9,9 @@ type ServerOptions = {
 }
 class ServerHandle {
   constructor(private server: Server){}
+  public reload() {
+    signalReload()
+  }
 }
 
 
@@ -23,6 +27,10 @@ export function createReloadServer(options: ServerOptions = {
       return
     }
     switch (request.url) {
+      case '/_server_/reload':
+        return reloadHanlder(response)
+      case '/_server_/signal':
+        return signalHandler(response)
       default:
         return staticFileHandler(root, request, response)
     }

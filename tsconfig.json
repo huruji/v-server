@@ -9,7 +9,7 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es2015",
     "noEmit": false,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -20,10 +20,9 @@
     "declaration": true,
     "baseUrl": "./",
     "lib": [
-      "es6",
-      "es7",
       "dom",
-      "dom.iterable"
+      "dom.iterable",
+      "ESNext"
     ]
   },
   "include": [
